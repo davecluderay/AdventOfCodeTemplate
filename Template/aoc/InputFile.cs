@@ -1,25 +1,24 @@
 using System.Reflection;
 
-namespace Aoc
+namespace Aoc;
+
+internal static class InputFile
 {
-    internal static class InputFile
+    public static string[] ReadAllLines(string? fileName = null)
     {
-        public static string[] ReadAllLines(string? fileName = null)
-        {
-            var directoryPath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location) ?? ".";
-            var filePath      = Path.Combine(directoryPath, fileName ?? "input.txt");
-            if (!File.Exists(filePath)) throw new Exception($"File not found: {filePath}");
+        var directoryPath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location) ?? ".";
+        var filePath      = Path.Combine(directoryPath, fileName ?? "input.txt");
+        if (!File.Exists(filePath)) throw new Exception($"File not found: {filePath}");
 
-            return File.ReadAllLines(filePath);
-        }
+        return File.ReadAllLines(filePath);
+    }
         
-        public static string ReadAllText(string? fileName = null)
-        {
-            var directoryPath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location) ?? ".";
-            var filePath      = Path.Combine(directoryPath, fileName ?? "input.txt");
-            if (!File.Exists(filePath)) throw new Exception($"File not found: {filePath}");
+    public static string ReadAllText(string? fileName = null)
+    {
+        var directoryPath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location) ?? ".";
+        var filePath      = Path.Combine(directoryPath, fileName ?? "input.txt");
+        if (!File.Exists(filePath)) throw new Exception($"File not found: {filePath}");
 
-            return File.ReadAllText(filePath);
-        }
+        return File.ReadAllText(filePath);
     }
 }

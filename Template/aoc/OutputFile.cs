@@ -1,23 +1,22 @@
 using System.Reflection;
 
-namespace Aoc
+namespace Aoc;
+
+internal static class OutputFile
 {
-    internal static class OutputFile
+    public static void WriteAllLines(IEnumerable<string> lines, string? fileName = null)
     {
-        public static void WriteAllLines(IEnumerable<string> lines, string? fileName = null)
-        {
-            var directoryPath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location) ?? ".";
-            var filePath      = Path.Combine(directoryPath, fileName ?? "output.txt");
+        var directoryPath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location) ?? ".";
+        var filePath      = Path.Combine(directoryPath, fileName ?? "output.txt");
 
-            File.WriteAllLines(filePath, lines);
-        }
+        File.WriteAllLines(filePath, lines);
+    }
         
-        public static void WriteAllText(string content, string? fileName = null)
-        {
-            var directoryPath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location) ?? ".";
-            var filePath      = Path.Combine(directoryPath, fileName ?? "output.txt");
+    public static void WriteAllText(string content, string? fileName = null)
+    {
+        var directoryPath = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location) ?? ".";
+        var filePath      = Path.Combine(directoryPath, fileName ?? "output.txt");
 
-            File.WriteAllText(filePath, content);
-        }
+        File.WriteAllText(filePath, content);
     }
 }

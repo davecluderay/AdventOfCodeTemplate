@@ -1,6 +1,4 @@
-﻿using System;
-
-using Aoc;
+﻿using Aoc;
 
 try
 {
