@@ -4,15 +4,15 @@ internal class Solution
 {
     public string Title => "";
 
-    public object? PartOne()
+    public object PartOne()
     {
         var lines = InputFile.ReadAllLines();
-        return null;
+        return null!;
     }
-        
-    public object? PartTwo()
+
+    public object PartTwo()
     {
         var lines = InputFile.ReadAllLines();
-        return null;
+        return null!;
     }
 }
