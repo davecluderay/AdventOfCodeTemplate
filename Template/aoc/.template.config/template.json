@@ -1,7 +1,7 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "Dave Cluderay",
-    "classifications": [ "Common", "Console", "C#11" ],
+    "classifications": [ "Common", "Console", "C#" ],
     "identity": "AdventOfCode.CSharpConsole",
     "name": "Advent of Code (C# Console App)",
     "shortName": "aoc",
